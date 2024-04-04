@@ -1,0 +1,63 @@
+E-COMMERCE API DOCUMENTATION
+
+***TEST ACCOUNTS:***
+- Regular User 1:
+     - email: frank@gmail.com
+     - pwd: admin123
+- Admin User:
+    - email: fjpraxidio@gmail.com
+    - pwd: admin123
+    
+
+***ROUTES:***
+- User registration (POST)
+    - http://ec2-3-16-71-55.us-east-2.compute.amazonaws.com/b1/users/register
+    - request body: 
+        - email: fjpraxidio@gmail.com
+        - pwd: admin123
+- User authentication (POST)
+    - http://ec2-3-16-71-55.us-east-2.compute.amazonaws.com/b1/users/login
+    - request body: 
+        - email: fjpraxidio@gmail.com
+        - pwd: admin123
+- Create Product (Admin only) (POST)
+    - http://ec2-3-16-71-55.us-east-2.compute.amazonaws.com/b1/products
+    - request body: 
+        - name: Sumatra
+        - description: This single-origin dark coffee has bold flavor and notes of rich herbs and rustic spices.
+        - price: 500
+- Retrieve all products (Admin only) (GET)
+    - http://ec2-3-16-71-55.us-east-2.compute.amazonaws.com/b1/products/all
+    - request body: none
+- Retrieve all active products (GET)
+    - http://ec2-3-16-71-55.us-east-2.compute.amazonaws.com/b1/products
+    - request body: none
+-Retrieve a specific product (GET)
+    - http://ec2-3-16-71-55.us-east-2.compute.amazonaws.com/b1/products/653534dc38420e2c77786c8a
+    - request body: none
+- Update product information (Admin Only) (PUT)
+    - http://ec2-3-16-71-55.us-east-2.compute.amazonaws.com/b1/products/653534dc38420e2c77786c8a
+    - request body:
+        - name: Caffè Verona
+        - description: Well-balanced & full-bodied, Caffe Verona® is a storied dark roast coffee with notes of dark cocoa & caramelized sugar. Try our whole bean today!!!!!
+        - price: 1500
+- Archive Product (Admin Only) (PUT)
+    - http://ec2-3-16-71-55.us-east-2.compute.amazonaws.com/b1/products/archive/653534dc38420e2c77786c8a
+    - request body: none
+- Activate Product (Admin Only) (PUT)
+    - http://ec2-3-16-71-55.us-east-2.compute.amazonaws.com/b1/products/activate/653534dc38420e2c77786c8a
+    - request body: none
+- Non-admin User Checkout (Create Order) (POST)
+    - http://ec2-3-16-71-55.us-east-2.compute.amazonaws.com/b1/orders/653610c270a9ccd4003903ed
+    - request body:
+        - products:
+            - productId: 6535fe73c15fac18c5e13f05
+            - quantity: 5
+- Retrieve User Details (GET)
+    - http://ec2-3-16-71-55.us-east-2.compute.amazonaws.com/b1/users/details
+    - request body: none
+    - authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzYxMGMyNzBhOWNjZDQwMDM5MDNlZCIsImVtYWlsIjoiZnJhbmtAZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY5OTUyNDIwMX0.UCjhllRGMABuK68B7XJPSbYpUxNRq82EYL2FMdcr-pA
+- Retrieve authenticated user’s orders (GET)
+    - http://ec2-3-16-71-55.us-east-2.compute.amazonaws.com/b1/orders/myOrders
+    - request body: none
+    - authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzYxMGMyNzBhOWNjZDQwMDM5MDNlZCIsImVtYWlsIjoiZnJhbmtAZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY5OTUyNDIwMX0.UCjhllRGMABuK68B7XJPSbYpUxNRq82EYL2FMdcr-pA

@@ -1,0 +1,518 @@
+{
+	"info": {
+		"_postman_id": "ce3505f0-cb4e-4109-a637-ef3eab0aaaba",
+		"name": "B313-Capstone2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28995085"
+	},
+	"item": [
+		{
+			"name": "Add to Cart",
+			"item": [
+				{
+					"name": "Add to Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzYxMGMyNzBhOWNjZDQwMDM5MDNlZCIsImVtYWlsIjoiZnJhbmtAZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY5ODIzMzI2MX0.I8FRjmd06Mgs4SHBMW3iJU4K4ojgIXB7-K9PLaiz6tk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"653534dc38420e2c77786c8a\",\r\n    \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/orders/cart/653610c270a9ccd4003903ed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"orders",
+								"cart",
+								"653610c270a9ccd4003903ed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Check Email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"prax@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/checkEmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"checkEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"prax1@gmail.com\",\r\n    \"password\": \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"fjpraxidio@gmail.com\",\r\n    \"password\": \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve User Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NGE0NmFiMDc4MzU5OWYxOWJlYjM1YiIsImVtYWlsIjoidGVzdDJAZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTY5OTUyMzk1Nn0.E0sjORaUO2e0fDDRrvyeZWTULOb1KEexZh6V9jaclZs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/b1/users/details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"b1",
+						"users",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User to ADMIN (ADMIN ONLY)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRlYzJiNGEwNDZkMTkyOTQ0MDJmNiIsImVtYWlsIjoiZmpwcmF4aWRpb0BnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTgwNDIxNjl9.8ZmqswYhLZSkBBj-y9mXd9ytfeVVEg0Fea-5Sff0r2E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"653610c270a9ccd4003903ed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/updateAdmin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"updateAdmin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product (ADMIN ONLY)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRlYzJiNGEwNDZkMTkyOTQ0MDJmNiIsImVtYWlsIjoiZmpwcmF4aWRpb0BnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTc5ODQ0ODd9.KzJu9MNnxx-EgwBwomtWRftCwKv6ZyYoEbIX1LHjekI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Veranda Blend®\",\r\n    \"description\": \" This blend was inspired by the lightly roasted coffees we’ve sipped together over the years, often enjoyed on a breezy veranda with a view of lush coffee trees. Subtle but flavorful with notes of toasted malt and milk chocolate, it’s an inviting, approachable coffee that mixes beautifully with milk.\",\r\n    \"price\": 500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve All Products (ADMIN ONLY)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRlYzJiNGEwNDZkMTkyOTQ0MDJmNiIsImVtYWlsIjoiZmpwcmF4aWRpb0BnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTgwNDIxNjl9.8ZmqswYhLZSkBBj-y9mXd9ytfeVVEg0Fea-5Sff0r2E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/products/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"products",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve All Active Products",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Specific Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/products/653534dc38420e2c77786c8a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"products",
+						"653534dc38420e2c77786c8a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product Information (ADMIN ONLY)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRlYzJiNGEwNDZkMTkyOTQ0MDJmNiIsImVtYWlsIjoiZmpwcmF4aWRpb0BnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTgwNDIxNjl9.8ZmqswYhLZSkBBj-y9mXd9ytfeVVEg0Fea-5Sff0r2E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Caffè Verona\",\r\n    \"description\": \"Well-balanced & full-bodied, Caffe Verona® is a storied dark roast coffee with notes of dark cocoa & caramelized sugar. Try our whole bean today!\",\r\n    \"price\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/products/653534dc38420e2c77786c8a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"products",
+						"653534dc38420e2c77786c8a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Archive Product (ADMIN ONLY)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRlYzJiNGEwNDZkMTkyOTQ0MDJmNiIsImVtYWlsIjoiZmpwcmF4aWRpb0BnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTgwNjM5NDl9.FkgbY1fo1exUhhrE-SfzIt4XE4zNcEB5o-k8x26Xc4Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isActive\" : false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/products/653534dc38420e2c77786c8a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"products",
+						"653534dc38420e2c77786c8a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate Product (ADMIN ONLY)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRlYzJiNGEwNDZkMTkyOTQ0MDJmNiIsImVtYWlsIjoiZmpwcmF4aWRpb0BnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTgwNjM5NDl9.FkgbY1fo1exUhhrE-SfzIt4XE4zNcEB5o-k8x26Xc4Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/products/653534dc38420e2c77786c8a/archive",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"products",
+						"653534dc38420e2c77786c8a",
+						"archive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRlYzJiNGEwNDZkMTkyOTQ0MDJmNiIsImVtYWlsIjoiZmpwcmF4aWRpb0BnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTk0NTQ4NDR9.v5_xggmUCzSlFZPVmTAFjAdWrPwm2u2amuDUzTL-0Eg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": \"6535fe73c15fac18c5e13f05\",\r\n    \"quantity\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/b1/orders/653610c270a9ccd4003903ed",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"b1",
+						"orders",
+						"653610c270a9ccd4003903ed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retreive User Orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MzRlYzJiNGEwNDZkMTkyOTQ0MDJmNiIsImVtYWlsIjoiZmpwcmF4aWRpb0BnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTgxOTg2NDB9.apGV1mSciNPMgkoXZ6cm6V8iUTIDrip3NrqULqo_WYA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"653795091894b65b2dcfce1a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/orders/retrieve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"orders",
+						"retrieve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrive ALL Orders (ADMIN ONLY)",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
